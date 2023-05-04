@@ -1,0 +1,17 @@
+<!-- <div class="centrado">
+    <mat-form-field class="topText" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" [(ngModel)]="value">
+    </mat-form-field>
+    <button mat-mini-fab color="primary" (click)="saveAndRedirect()">
+        <mat-icon>save</mat-icon>
+    </button>
+</div> -->
+  
+<div class="centrado">
+    <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" [(ngModel)]="value">
+        <button mat-icon-button matSuffix (click)="saveAndRedirect()"><mat-icon>send</mat-icon></button>
+    </mat-form-field>
+</div>

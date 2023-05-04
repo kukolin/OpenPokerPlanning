@@ -1,0 +1,78 @@
+<div class="topText">
+    <p style="display:flex; align-items:center;">Participating as: <b style="padding-inline-start: 0.3em;">{{myName}} </b>
+        <i class="material-icons edit-button" (click)="editName()">edit</i>
+    </p>
+    <p class="">Voting average: <b>{{average | number : '1.1-1'}}</b></p>
+    <p class="">Most voted: <b>{{mode}}</b></p>
+</div>
+
+<div class="topTextRight">
+    <p style="display:flex; align-items:center; width: 100%;">Room code: <b style="padding-inline-start: 0.3em;">{{roomId}} </b>
+        <i class="material-icons edit-button" matTooltip="Copyed!" 
+        #tooltip="matTooltip"
+        (mouseenter)="$event.stopImmediatePropagation()"
+        (mouseleave)="$event.stopImmediatePropagation()" 
+        (click)="copyRoomId(); tooltip.show()">content_copy</i>
+    </p>
+    <button mat-flat-button color="secondary" class="copy-link" (click)="copyRoomLink()">
+        Copy room invite link <i class="material-icons copy-button-white">content_copy</i>
+    </button>
+    
+</div>
+
+<table class="centrado voteCards">
+    <tr>
+        <td> <!-- CAFÉ -->
+            <button class="card" (click)="setVote(0)">
+                <div class="card-body-coffee">
+                    <p class="material-icons coffeeCard">coffee</p>
+                </div> 
+            </button>
+        </td> <!-- Demás cartas -->
+        <td *ngFor="let cardNumber of cardNumbers">
+            <button class="card" (click)="setVote(cardNumber)">
+                <div class="card-body">
+                    <p class="card-number">
+                        {{cardNumber}}
+                    </p>
+                </div> 
+            </button>
+        </td>
+    </tr>
+</table>
+
+<table style="width: 100%;">
+    <tr>
+        <td style="width: 50%;">
+            <button class="button" mat-flat-button color="secondary" (click)="resetVotes()"><label>Reset votes</label></button>
+        </td>
+        <td>
+            <button *ngIf="!voteRevealed; else elseHide" mat-flat-button color="secondary" style="transform: translateX(-50%); padding-left: 8px; padding-right: 8px;" (click)="revealVotes()">
+                    <mat-icon>visibility</mat-icon> Show votes 
+            </button>
+        </td>
+        <ng-template #elseHide>
+            <button mat-flat-button color="secondary" style="transform: translateX(-50%); padding-left: 8px; padding-right: 8px;" (click)="revealVotes()">
+                <mat-icon>visibility_off</mat-icon> Hide votes 
+            </button>
+        </ng-template>
+    </tr>
+</table>
+
+<button mat-flat-button class="button" color="warn" (click)="resetPeople()"><label>Reset people</label></button>
+
+<div class="names">
+        <div *ngFor="let user of userList"> {{user.name}} 
+            <span *ngIf="user.vote > 0">
+                <p class="card-number" *ngIf="voteRevealed; else elseBlock">{{user.vote}}</p>
+            </span>
+            <span *ngIf="user.vote == 0">
+                <p *ngIf="voteRevealed; else elseBlock"><span class="material-icons coffee">coffee</span></p>
+            </span>
+        </div>
+        <ng-template #elseBlock><p class="card-number">?</p></ng-template> 
+</div>
+
+<div class="text-center fixed-bottom" *ngIf="mostrar" @fadeOut>
+    <h1 style="color: red; font-weight: bold; font-size: xx-large;">Unánime!</h1>
+</div>

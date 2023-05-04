@@ -1,0 +1,15 @@
+<div class="centrado">
+    <p class="topText centrado">Join existing room:</p>
+
+    <mat-form-field appearance="fill" color="primary">
+        <mat-label>Room code</mat-label>
+        <input matInput type="text" [(ngModel)]="roomNameInput">
+        <button mat-icon-button matSuffix color="primary" (click)="joinRoomSend()"><mat-icon>send</mat-icon></button>
+    </mat-form-field>
+
+    <p class="middleText centrado">Or:</p>
+
+    <button class="button" mat-flat-button color="primary" (click)="createRoom()"><label>Create room</label></button>
+
+    <p class="bottomText centrado">Or ask a friend to send you an invite link!</p>
+</div>

@@ -1,0 +1,142 @@
+.voteCards {
+    padding-top: 2em;
+}
+
+.button {
+    margin: 1em;
+    margin-bottom: 0;
+}
+
+.edit-button {
+  padding-inline-start: 0.2em;
+  padding-bottom: 3px;
+  color: blueviolet;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.centrado {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 100px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-body {
+    padding: 2px 16px;
+  }
+
+  .card-body-coffee {
+    padding: 2px 11.5px;
+    padding-left: 12;
+    padding-right: 12;
+  }
+
+  .card-number {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  .coffee {
+    font-size: 36px;
+    padding-top: 10px;
+  }
+
+  .coffeeCard {
+    font-size: 30px;
+    margin-top: 24px;
+    margin-bottom: 19px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .names {
+    color: #FFF;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 40%;
+  }
+  
+  .names div {
+    padding: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+    text-align: center;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .white {
+    color: #FFF;
+  }
+
+  .topText {
+    font-size: 1.5em;
+    padding: 1em;
+    position: absolute;
+    user-select: none;
+  }
+
+  .topTextRight {
+    font-size: 1.5em;
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    user-select: none;
+    justify-content: right;
+  }
+
+  .copy-button-white {
+    padding-inline-start: 0.2em;
+    padding-bottom: 3px;
+  }
+
+  .copy-link {
+    position: fixed;
+    right: 1.5em;
+  }
+
+  $text-opacity: 1;
+  $text-fadeout-duration: 1s;
+
+  .fixed-bottom {
+    display: fixed;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    // -webkit-transition: opacity 3s ease-in-out !important;
+    // -moz-transition: opacity 3s ease-in-out !important;
+    // -ms-transition: opacity 3s ease-in-out !important;
+    // -o-transition: opacity 3s ease-in-out !important;
+  }
+
+  .hide{
+    opacity: 0
+  }
+
+  .text-center {
+    text-align: center;
+  }
